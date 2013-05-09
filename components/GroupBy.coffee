@@ -18,11 +18,23 @@ class GroupBy extends noflo.Component
     @inPorts.in.on "connect", =>
       @objects = []
 
+    @inPorts.in.on "begingroup", (group) =>
+      @outPorts.out.beginGroup group
+
     @inPorts.in.on "data", (object) =>
       @objects.push object
 
+    @inPorts.in.on "endgroup", (group) =>
+      @flush()
+      @outPorts.out.endGroup()
+
     @inPorts.in.on "disconnect", =>
-      @outPorts.out.send _.groupBy @objects, @property
+      @flush()
       @outPorts.out.disconnect()
+
+  flush: ->
+    return if _.isEmpty @objects
+    @outPorts.out.send _.groupBy @objects, @property
+    @objects = []
 
 exports.getComponent = -> new GroupBy
