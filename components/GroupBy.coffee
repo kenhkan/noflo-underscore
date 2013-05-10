@@ -34,7 +34,10 @@ class GroupBy extends noflo.Component
 
   flush: ->
     return if _.isEmpty @objects
-    @outPorts.out.send _.groupBy @objects, @property
+
+    if _.all @objects, _.isObject
+      @outPorts.out.send _.groupBy @objects, @property
+
     @objects = []
 
 exports.getComponent = -> new GroupBy
