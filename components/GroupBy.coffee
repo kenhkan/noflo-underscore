@@ -1,6 +1,6 @@
-_ = require("underscore")
-_s = require("underscore.string")
-noflo = require("noflo")
+_ = require "underscore"
+_s = require "underscore.string"
+noflo = require "noflo"
 
 class GroupBy extends noflo.Component
 
@@ -34,10 +34,7 @@ class GroupBy extends noflo.Component
 
   flush: ->
     return if _.isEmpty @objects
-
-    if _.all @objects, _.isObject
-      @outPorts.out.send _.groupBy @objects, @property
-
+    @outPorts.out.send _.groupBy @objects, @property
     @objects = []
 
 exports.getComponent = -> new GroupBy
