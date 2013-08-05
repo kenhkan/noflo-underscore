@@ -1,42 +1,44 @@
-{ "name": "noflo-underscore"
-, "description": "Underscore.js Utilities as NoFlo Components"
-, "keywords":
-  [ "noflo"
-  , "underscore.js"
-  , "underscore"
-  , "utilities"
-  ]
-, "author": "Kenneth Kan <kenhkan@gmail.com>"
-, "version": "0.0.2"
-, "licenses":
-  [ { "type": "MIT"
-    , "url": "https://github.com/kenhkan/noflo-underscore/blob/master/LICENSE.md"
+{
+  "name": "noflo-underscore",
+  "description": "Underscore.js Utilities as NoFlo Components",
+  "keywords": [
+    "noflo",
+    "underscore.js",
+    "underscore",
+    "utilities"
+  ],
+  "author": "Kenneth Kan <kenhkan@gmail.com>",
+  "version": "0.0.3",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kenhkan/noflo-underscore/blob/master/LICENSE.md"
     }
-  ]
-, "engines":
-  { "node": ">=0.6.0"
-  }
-, "repository":
-  { "type": "git"
-  , "url": "git://github.com/kenhkan/noflo-underscore"
-  }
-, "dependencies":
-  { "noflo": "https://github.com/kenhkan/noflo/tarball/master"
-  , "underscore": "1.4.x"
-  , "underscore.string": "2.3.x"
-  }
-, "devDependencies":
-  { "coffeelint": "*"
-  , "coffee-script": "1.6.x"
-  , "noflo-test": "https://github.com/kenhkan/noflo-test/tarball/master"
-  }
-, "noflo":
-  { "components":
-    { "GroupBy": "./components/GroupBy.coffee"
+  ],
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kenhkan/noflo-underscore.git"
+  },
+  "dependencies": {
+    "underscore": "1.4.x",
+    "underscore.string": "2.3.x",
+    "noflo": "~0.4.0"
+  },
+  "devDependencies": {
+    "coffeelint": "*",
+    "coffee-script": "1.6.x",
+    "noflo-test": "~0.0.5"
+  },
+  "noflo": {
+    "components": {
+      "GroupBy": "./components/GroupBy.coffee"
     }
-  }
-, "scripts":
-  { "pretest": "./node_modules/.bin/coffeelint -r components"
-  , "test": "./node_modules/.bin/noflo-test --spec test/*.coffee"
+  },
+  "scripts": {
+    "pretest": "./node_modules/.bin/coffeelint -r components",
+    "test": "./node_modules/.bin/noflo-test --spec test/*.coffee"
   }
 }
