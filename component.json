@@ -1,0 +1,28 @@
+{
+  "name": "noflo-underscore",
+  "description": "Underscore.js Utilities as NoFlo Components",
+  "author": "Kenneth Kan <kenhkan@gmail.com>",
+  "repo": "kenhkan/noflo-underscore",
+  "version": "0.0.4",
+  "keywords": [
+    "noflo",
+    "underscore.js",
+    "underscore",
+    "utilities"
+  ],
+  "dependencies": {
+    "noflo/noflo": "*"
+  },
+  "scripts": [
+    "components/GroupBy.coffee",
+    "index.js"
+  ],
+  "json": [
+    "component.json"
+  ],
+  "noflo": {
+    "components": {
+      "GroupBy": "components/GroupBy.coffee"
+    }
+  }
+}
