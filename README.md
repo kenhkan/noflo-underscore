@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/kenhkan/noflo-underscore.png)](https://waffle.io/kenhkan/noflo-underscore)  
 Underscore.js Utilities as NoFlo Components [![Build Status](https://secure.travis-ci.org/kenhkan/noflo-underscore.png?branch=master)](https://travis-ci.org/kenhkan/noflo-underscore)
 ===============================
 
