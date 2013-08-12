@@ -90,6 +90,7 @@ module.exports = ->
   @loadNpmTasks 'grunt-cafe-mocha'
   @loadNpmTasks 'grunt-mocha-phantomjs'
   @loadNpmTasks 'grunt-coffeelint'
+  @loadNpmTasks 'grunt-exec'
 
   # Our local tasks
   @registerTask 'build', 'Build NoFlo for the chosen target platform', (target = 'all') =>
