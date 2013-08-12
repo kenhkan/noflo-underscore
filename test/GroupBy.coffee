@@ -1,5 +1,8 @@
 test = require "noflo-test"
 
+process.on 'uncaughtException', (err) ->
+  console.log('Caught exception: ' + err)
+
 test.component("underscore/GroupBy").
   discuss("send some objects without defining a property to group by").
     send.connect("in").
@@ -42,8 +45,8 @@ test.component("underscore/GroupBy").
     send.disconnect("in").
   discuss("grouped by the parity of the numbers").
     receive.connect("out").
-      receive.data("out", 
-        "0": [2,4,6], 
+      receive.data("out",
+        "0": [2,4,6],
         "1": [1,3,5]
       ).
     receive.disconnect("out").

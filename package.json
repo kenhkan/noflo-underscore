@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "noflo-test": "~0.0.4",
+    "coffee-script": "~1.6.3",
+    "vows": "~0.7.0",
     "grunt": "~0.4.1",
     "grunt-contrib-coffee": "~0.6.6",
     "grunt-coffeelint": "~0.0.6",
@@ -44,5 +46,8 @@
     "components": {
       "GroupBy": "./components/GroupBy.coffee"
     }
+  },
+  "scripts": {
+    "test": "grunt test"
   }
 }
