@@ -15,7 +15,9 @@ test.component("underscore/SortBy").
     send.disconnect("in").
   discuss("get back ordered by score").
     receive.connect("out").
-      receive.data("out", [{name: 'first', score: 2}, {name: 'second', score: 5}, {name: 'third', score: 10}]).
+      receive.data("out", {name: 'first', score: 2}).
+      receive.data("out", {name: 'second', score: 5}).
+      receive.data("out", {name: 'third', score: 10}).
     receive.disconnect("out").
 
   next().
@@ -33,7 +35,9 @@ test.component("underscore/SortBy").
     send.disconnect("in").
   discuss("get back ordered by score").
     receive.connect("out").
-      receive.data("out", [{name: 'first', score: 15}, {name: 'second', score: 3}, {name: 'third', score: 1}]).
+      receive.data("out", {name: 'first', score: 15}).
+      receive.data("out", {name: 'second', score: 3}).
+      receive.data("out", {name: 'third', score: 1}).
     receive.disconnect("out").
 
   next().
@@ -48,7 +52,9 @@ test.component("underscore/SortBy").
     send.disconnect("in").
   discuss("get back ordered by score").
     receive.connect("out").
-      receive.data("out", [{name: 'first', score: 'a'}, {name: 'second', score: 1}, {name: 'third', score: 3}]).
+      receive.data("out", {name: 'first', score: 'a'}).
+      receive.data("out", {name: 'second', score: 1}).
+      receive.data("out", {name: 'third', score: 3}).
     receive.disconnect("out").
 
 export module

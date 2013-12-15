@@ -41,7 +41,9 @@ class SortBy extends noflo.Component
 
   flush: ->
     return if _.isEmpty @buffer
-    @outPorts.out.send _.sortBy @buffer, ((ip) -> Number(ip[@attribute] * @order) or 0), this
+    sorted = _.sortBy @buffer, ((ip) -> Number(ip[@attribute] * @order) or 0), this
+    for ip in sorted
+      @outPorts.out.send ip
     @buffer = [];
 
 exports.getComponent = -> new SortBy
