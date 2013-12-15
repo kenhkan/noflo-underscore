@@ -3,7 +3,7 @@ _ = require 'underscore'
 
 class SortBy extends noflo.Component
 
-  description: 'Sorts IPs by <property>, sends sorted IPs on disconnect or endgroup. Order can be <desc> or <asc>(default)'
+  description: 'Sorts IPs by <property>. Order can be <desc> or <asc>(default)'
   buffer: []
   attribute: null
   order: 1
@@ -41,9 +41,10 @@ class SortBy extends noflo.Component
 
   flush: ->
     return if _.isEmpty @buffer
-    sorted = _.sortBy @buffer, ((ip) -> Number(ip[@attribute] * @order) or 0), this
+    sorted = _.sortBy @buffer, ((ip) ->
+      Number(ip[@attribute] * @order) or 0), this
     for ip in sorted
       @outPorts.out.send ip
-    @buffer = [];
+    @buffer = []
 
 exports.getComponent = -> new SortBy
