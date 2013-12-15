@@ -44,7 +44,8 @@
   },
   "noflo": {
     "components": {
-      "GroupBy": "./components/GroupBy.coffee"
+      "GroupBy": "./components/GroupBy.coffee",
+      "SortBy": "./components/SortBy.coffee"
     }
   },
   "scripts": {
